@@ -1,0 +1,165 @@
+body {
+    background-color: white
+}
+
+.container {
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    width: 30rem
+}
+
+.chat-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem
+}
+
+.chat-list {
+    height: 25rem;
+    overflow-y: scroll;
+    background-color: #f8f8f8;
+    padding: 1rem
+}
+
+.chat-list::-webkit-scrollbar {
+    width: 0
+}
+
+.chat-list__item {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    width: 100%
+}
+
+.chat-list__item:nth-child(1) {
+    margin-top: 0
+}
+
+.chat-list__item__avatar {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: .5rem
+}
+
+.chat-list__item__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.chat-list__item__message {
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    background-color: white;
+    position: relative;
+    max-width: calc(80% - 40px)
+}
+
+.chat-list__item__message::before,
+.chat-list__item__message::after {
+    content: "";
+    border-radius: 2px;
+    background-color: white;
+    position: absolute
+}
+
+.chat-list__item__message::before {
+    top: 0;
+    left: -6px;
+    width: 12px;
+    height: 4px
+}
+
+.chat-list__item__message::after {
+    top: -1px;
+    left: -3px;
+    width: 4px;
+    height: 12px;
+    transform: rotate(-45deg)
+}
+
+.chat-list__item__time {
+    font-size: 12px;
+    color: #4d4d4d;
+    float: right;
+    margin-top: .5rem;
+    margin-left: .5rem
+}
+
+.chat-list__item.in+.in {
+    margin-top: .25rem
+}
+
+.chat-list__item.in+.in .chat-list__item__message::before,
+.chat-list__item.in+.in .chat-list__item__message::after {
+    display: none
+}
+
+.chat-list__item.self {
+    justify-content: flex-end
+}
+
+.chat-list__item.self+.self {
+    margin-top: .25rem
+}
+
+.chat-list__item.self+.self .chat-list__item__message::before,
+.chat-list__item.self+.self .chat-list__item__message::after {
+    display: none
+}
+
+.chat-list__item.self .chat-list__item__time {
+    color: #b1c6f2
+}
+
+.chat-list__item.self .chat-list__item__avatar {
+    order: 2;
+    margin-left: .5rem;
+    margin-right: 0
+}
+
+.chat-list__item.self .chat-list__item__message {
+    background-color: #516798;
+    color: white
+}
+
+.chat-list__item.self .chat-list__item__message::before {
+    content: "";
+    left: auto;
+    right: -6px;
+    background-color: #516798
+}
+
+.chat-list__item.self .chat-list__item__message::after {
+    content: "";
+    top: -1px;
+    left: auto;
+    right: -3px;
+    transform: rotate(45deg);
+    background-color: #516798
+}
+
+.chat-input {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem
+}
+
+.form-select--user,
+.form-select--order {
+    width: calc(50% - .5rem)
+}
+
+.form-control--message {
+    margin-right: 1rem
+}
+
+/*# sourceMappingURL=main.min.css.map */
